@@ -1,15 +1,17 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from '../scenes/home';
+import ContactsListScreen from '@scenes/contactsList';
+import ContactScreen from '../scenes/contact';
 
 const Stack = createStackNavigator();
 
 function Navigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen name="ContactsList" component={ContactsListScreen} />
+        <Stack.Screen name="Contact" component={ContactScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

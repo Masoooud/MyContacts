@@ -7,21 +7,22 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import { Typography, Spacing } from '@styles';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-const HomeScreen = () => {
+const MyHeader = ({ title, leftButton, rightButton }) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    // backgroundColor: 'red',
   };
-
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Text>Hello</Text>
       <View style={styles.container}>
-        <Text>Home Screen</Text>
+        {leftButton ? leftButton : <View />}
+        <Text style={[styles.title, Typography.FONT_BOLD]}>{title}</Text>
+        {rightButton ? <rightButton /> : <View />}
       </View>
     </SafeAreaView>
   );
@@ -29,10 +30,16 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'center',
+    padding: Spacing.SCALE_16,
+  },
+  title: {
+    fontSize: Typography.FONT_SIZE_16,
+    width: '34%',
   },
 });
 
-export default HomeScreen;
+export default MyHeader;

@@ -145,7 +145,6 @@
 				73B63B7C9D736B491AB7E426 /* Pods-MyContacts-MyContactsTests.debug.xcconfig */,
 				CDA6FF8CF10EED5B2C246689 /* Pods-MyContacts-MyContactsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
