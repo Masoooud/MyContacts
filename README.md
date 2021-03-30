@@ -116,9 +116,7 @@ open -a "Android Studio" android
 
     - Manually upload the APK into the created App in Google Play Console
 
-## <a id="Summary"></a>Summary
-
-#### Approach
+## Approach
 
 Before I start to develop the app, I've done some research to find the best user interface and user experience. After I got the design idea, it was time to decide how I should develop the app. So, I make the design into small parts to know the components I should create. After all these things, I started to implement the application.
 
@@ -131,7 +129,7 @@ Before I start to develop the app, I've done some research to find the best user
 1. Started to develop components and scenes of the app.
 <!-- 1. Wrote some test to ensure the app will be working perfectly. -->
 
-#### Featured
+## Features
 
 - Showing contact's photo
 
@@ -143,7 +141,7 @@ Before I start to develop the app, I've done some research to find the best user
 
 - Clean design and good user Experience.
 
-#### What if I had had more time I would have
+## What if I had had more time I would have
 
 - added search to list.
 
