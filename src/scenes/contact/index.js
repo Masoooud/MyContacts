@@ -55,7 +55,8 @@ const ContactScreen = ({ route, navigation }) => {
   const createAction = (name, icon, value, action) => (
     <TouchableOpacity
       style={styles.action}
-      onPress={() => doAction(action, value)}>
+      onPress={() => doAction(action, value)}
+      testID="actionButton">
       <CustomIcon name={icon} fill="#212121" size={20} />
       <Text style={styles.subtext}>{name}</Text>
     </TouchableOpacity>
@@ -74,7 +75,7 @@ const ContactScreen = ({ route, navigation }) => {
             source={{ uri: `${contact.picture.medium}` }}
             style={styles.image}
           />
-          <Text style={[styles.title, { marginTop: 16 }]}>
+          <Text style={[styles.title, { marginTop: 16 }]} testedID="fullname">
             {contact.name.first} {contact.name.last}
           </Text>
         </View>

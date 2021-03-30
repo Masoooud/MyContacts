@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactRow test components rendered properly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "flex-start",
+      "opacity": 1,
+      "paddingHorizontal": 32,
+      "paddingVertical": 32,
+    }
+  }
+  testID="button"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 32,
+        },
+        Object {
+          "fontFamily": "System",
+          "fontWeight": "700",
+        },
+        Object {
+          "marginRight": 5,
+        },
+      ]
+    }
+    testID="first"
+  >
+    a
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 32,
+      }
+    }
+    testID="last"
+  >
+    b
+  </Text>
+</View>
+`;

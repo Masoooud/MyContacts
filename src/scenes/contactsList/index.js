@@ -45,7 +45,9 @@ const ContactsListScreen = ({ navigation }) => {
     <Layout header={{ title: 'Contacts' }}>
       <FlatList
         data={contacts}
-        renderItem={({ item, index }) => ContactRow(item, navigation)}
+        renderItem={({ item, index }) => (
+          <ContactRow data={item} navigation={navigation} />
+        )}
         keyExtractor={(item, index) => `${item.id}${index}`}
         style={styles.list}
         onEndReached={onEndReached}
