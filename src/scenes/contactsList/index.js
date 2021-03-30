@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { FlatList, RefreshControl, StyleSheet } from 'react-native';
+import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import ContactRow from '@components/contactRow';
 import Layout from '@components/common/layout';
 import { getContacts } from '@services/contacts';
 import ListSeperator from '@components/common/listSeperator';
+import { Spacing } from '@styles';
 
 const ContactsListScreen = ({ navigation }) => {
   const [refreshing, setRefreshing] = React.useState(false);
@@ -16,8 +17,9 @@ const ContactsListScreen = ({ navigation }) => {
 
   async function getAllContacts() {
     const res = await getContacts(page);
-    console.log({ res });
-    setContacts(contacts.concat(res));
+    if (res !== undefined) {
+      setContacts(contacts.concat(res));
+    }
   }
 
   useEffect(() => {
@@ -27,14 +29,19 @@ const ContactsListScreen = ({ navigation }) => {
   const onEndReached = () => {
     if (!onEndReachedCalledDuringMomentum) {
       setOnEndReachedCalledDuringMomentum(true);
-      console.log('onEndReached');
       setPage(page + 1);
       getAllContacts();
     }
   };
 
+  const ListEmpty = () => (
+    <View style={styles.emptyContainer}>
+      <Text style={{ alignSelf: 'center' }}>No contants Available</Text>
+    </View>
+  );
+
   return (
-    <Layout header={{ title: 'Contacts List' }}>
+    <Layout header={{ title: 'Address book' }}>
       <FlatList
         data={contacts}
         renderItem={({ item, index }) => ContactRow(item, navigation)}
@@ -49,6 +56,7 @@ const ContactsListScreen = ({ navigation }) => {
           <RefreshControl refreshing={refreshing} onRefresh={getAllContacts} />
         }
         ItemSeparatorComponent={() => <ListSeperator />}
+        ListEmptyComponent={() => <ListEmpty />}
       />
     </Layout>
   );
@@ -57,6 +65,10 @@ const ContactsListScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   list: {
     backgroundColor: '#f1f1f1',
+  },
+  emptyContainer: {
+    marginTop: '20%',
+    padding: Spacing.SCALE_16,
   },
 });
 

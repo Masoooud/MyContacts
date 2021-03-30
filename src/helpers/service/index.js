@@ -37,7 +37,8 @@ async function api(method, path, data, options) {
     if (status) {
       return Axios(axiosConfig);
     } else {
-      console.log('Network is not conneted');
+      alert('Network is not conneted');
+      return new Error('Network is not conneted');
     }
   });
 }

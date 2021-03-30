@@ -23,6 +23,7 @@ const ContactScreen = ({ route, navigation }) => {
         style={[
           styles.title,
           Typography.FONT_WEIGHT_BOLD,
+          Typography.FONT_SIZE_20,
           { marginBottom: Mixins.scaleSize(8) },
         ]}>
         {name}
@@ -55,7 +56,7 @@ const ContactScreen = ({ route, navigation }) => {
     <TouchableOpacity
       style={styles.action}
       onPress={() => doAction(action, value)}>
-      <CustomIcon name={icon} fill="#212121" size={15} />
+      <CustomIcon name={icon} fill="#212121" size={20} />
       <Text style={styles.subtext}>{name}</Text>
     </TouchableOpacity>
   );
