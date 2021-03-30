@@ -1,17 +1,10 @@
 import React, { Fragment } from 'react';
-import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { View, StyleSheet } from 'react-native';
 import MyHeader from './header';
 
 const Layout = ({ children, header }) => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <Fragment>
+    <View style={styles.container} testID="layout">
       {header && (
         <MyHeader
           title={header.title}
@@ -20,8 +13,15 @@ const Layout = ({ children, header }) => {
         />
       )}
       {children}
-    </Fragment>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flex: 1,
+  },
+});
 
 export default Layout;

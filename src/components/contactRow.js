@@ -2,16 +2,23 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Typography, Spacing } from '@styles';
 
-const ContactRow = (item, navigation) => {
+const ContactRow = ({ data, navigation }) => {
   const goToContact = () => {
-    navigation.navigate('Contact', { contact: item });
+    navigation.navigate('Contact', { contact: data });
   };
   return (
-    <TouchableOpacity style={styles.container} onPress={goToContact}>
-      <Text style={[styles.text, Typography.FONT_BOLD, { marginRight: 5 }]}>
-        {item?.name?.first}
+    <TouchableOpacity
+      style={styles.container}
+      onPress={goToContact}
+      testID="button">
+      <Text
+        style={[styles.text, Typography.FONT_BOLD, { marginRight: 5 }]}
+        testID="first">
+        {data?.name?.first}
       </Text>
-      <Text style={styles.text}>{item?.name?.last}</Text>
+      <Text style={styles.text} testID="last">
+        {data?.name?.last}
+      </Text>
     </TouchableOpacity>
   );
 };
