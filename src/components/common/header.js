@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: Typography.FONT_SIZE_16,
     width: '34%',
+    textAlign: 'center',
   },
 });
 

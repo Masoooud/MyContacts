@@ -18,6 +18,7 @@ const ContactsListScreen = ({ navigation }) => {
   async function getAllContacts() {
     const res = await getContacts(page);
     if (res !== undefined) {
+      setRefreshing(false);
       setContacts(contacts.concat(res));
     }
   }
@@ -41,7 +42,7 @@ const ContactsListScreen = ({ navigation }) => {
   );
 
   return (
-    <Layout header={{ title: 'Address book' }}>
+    <Layout header={{ title: 'Contacts' }}>
       <FlatList
         data={contacts}
         renderItem={({ item, index }) => ContactRow(item, navigation)}
