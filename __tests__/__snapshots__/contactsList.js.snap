@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing ContactList Screen rende testing 1`] = `
+<View
+  style={
+    Object {
+      "display": "flex",
+      "flex": 1,
+    }
+  }
+  testID="layout"
+>
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+    style={Object {}}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "padding": 32,
+        }
+      }
+      testID="header-container"
+    >
+      <View />
+      <Text
+        style={
+          Array [
+            Object {
+              "fontSize": 32,
+              "textAlign": "center",
+              "width": "34%",
+            },
+            Object {
+              "fontFamily": "System",
+              "fontWeight": "700",
+            },
+          ]
+        }
+      >
+        Contacts
+      </Text>
+      <View />
+    </View>
+  </RCTSafeAreaView>
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    ListEmptyComponent={[Function]}
+    data={Array []}
+    disableVirtualization={false}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    onContentSizeChange={[Function]}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.5}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    refreshControl={
+      <RefreshControlMock
+        onRefresh={[Function]}
+        refreshing={false}
+      />
+    }
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "backgroundColor": "#f1f1f1",
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <RCTRefreshControl />
+    <View>
+      <View
+        style={
+          Object {
+            "marginTop": "20%",
+            "padding": 32,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "alignSelf": "center",
+            }
+          }
+        >
+          No contants Available
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

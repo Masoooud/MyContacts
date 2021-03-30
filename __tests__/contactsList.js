@@ -1,9 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { act, render } from '@testing-library/react-native';
 import ContactListScreen from '../src/scenes/contactsList';
 
 describe('testing ContactList Screen', () => {
-  const { toJSON } = render(<ContactListScreen />);
+  test('render testing', async () => {
+    jest.useFakeTimers();
 
-  expect(toJSON()).toMatchSnapShot();
+    const { toJSON } = render(<ContactListScreen />);
+
+    act(() => {
+      expect(toJSON()).toMatchSnapshot();
+    });
+  });
 });
