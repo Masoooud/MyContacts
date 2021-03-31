@@ -23,7 +23,8 @@ const ContactScreen = ({ route, navigation }) => {
       } ${name} button`}
       accessibilityHint={`This button will do ${action}`}
       style={styles.field}
-      onPress={() => doAction(action, value)}>
+      onPress={() => doAction(action, value)}
+      testID="field-button">
       <Text
         style={[
           styles.title,
@@ -64,7 +65,7 @@ const ContactScreen = ({ route, navigation }) => {
       accessibilityHint={`This button will do ${action}`}
       style={styles.action}
       onPress={() => doAction(action, value)}
-      testID="actionButton">
+      testID="action-button">
       <CustomIcon name={icon} fill="#212121" size={20} />
       <Text style={styles.subtext}>{name}</Text>
     </TouchableOpacity>
@@ -82,18 +83,21 @@ const ContactScreen = ({ route, navigation }) => {
           <Image
             source={{ uri: `${contact.picture.medium}` }}
             style={styles.image}
+            testID="contact-image"
           />
-          <Text style={[styles.title, { marginTop: 16 }]} testedID="fullname">
+          <Text
+            style={[styles.title, { marginTop: 16 }]}
+            testID="contact-fullname">
             {contact.name.first} {contact.name.last}
           </Text>
         </View>
-        <View style={styles.actionContainer}>
+        <View style={styles.actionContainer} testID="action-container">
           {createAction('call', 'phone', contact.phone, 'tel')}
           {createAction('message', 'chat', contact.phone, 'sms')}
           {createAction('video call', 'video', contact.video, '#')}
           {createAction('mail', 'mail', contact.email, 'mailto')}
         </View>
-        <View style={styles.content}>
+        <View style={styles.content} testID="field-container">
           {createField('Phone', contact.phone, 'tel')}
           {createField('Cell', contact.cell, 'tel')}
           {createField('Email', contact.email, 'mailto')}
