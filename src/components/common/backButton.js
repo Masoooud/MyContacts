@@ -5,7 +5,11 @@ import LeftArrow from './icons/LeftArrow';
 
 const MyBackButton = ({ text, navigation }) => {
   return (
-    <TouchableOpacity onPress={() => navigation.goBack()}>
+    <TouchableOpacity
+      accessible={true}
+      accessibilityLabel="Go back"
+      accessibilityHint="Navigates to the previous screen"
+      onPress={() => navigation.goBack()}>
       <View style={styles.container}>
         <LeftArrow size={15} fill="#000" />
         {text && <Text style={styles.text}>{text}</Text>}

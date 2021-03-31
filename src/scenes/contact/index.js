@@ -17,6 +17,11 @@ const ContactScreen = ({ route, navigation }) => {
 
   const createField = (name, value, action) => (
     <TouchableOpacity
+      accessible={true}
+      accessibilityLabel={`${
+        action === 'tel' ? 'call' : 'send'
+      } ${name} button`}
+      accessibilityHint={`This button will do ${action}`}
       style={styles.field}
       onPress={() => doAction(action, value)}>
       <Text
@@ -54,6 +59,9 @@ const ContactScreen = ({ route, navigation }) => {
 
   const createAction = (name, icon, value, action) => (
     <TouchableOpacity
+      accessible={true}
+      accessibilityLabel={`${action} button`}
+      accessibilityHint={`This button will do ${action}`}
       style={styles.action}
       onPress={() => doAction(action, value)}
       testID="actionButton">

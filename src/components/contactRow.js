@@ -8,9 +8,12 @@ const ContactRow = ({ data, navigation }) => {
   };
   return (
     <TouchableOpacity
+      accessible={true}
+      accessibilityLabel="Go to the contact"
+      accessibilityHint="Navigates to the the contact you pressed"
       style={styles.container}
       onPress={goToContact}
-      testID="button">
+      testID="contact-row">
       <Text
         style={[styles.text, Typography.FONT_BOLD, { marginRight: 5 }]}
         testID="first">

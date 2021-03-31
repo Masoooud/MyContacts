@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testing ContactList Screen rende testing 1`] = `
+exports[`testing ContactList Screen render testing 1`] = `
 <View
   style={
     Object {
@@ -15,6 +15,9 @@ exports[`testing ContactList Screen rende testing 1`] = `
     style={Object {}}
   >
     <View
+      accessibilityHint="Header of the page"
+      accessibilityLabel="header"
+      accessible={true}
       style={
         Object {
           "alignItems": "center",
@@ -82,6 +85,7 @@ exports[`testing ContactList Screen rende testing 1`] = `
         "backgroundColor": "#f1f1f1",
       }
     }
+    testID="contacts-list"
     updateCellsBatchingPeriod={50}
     viewabilityConfigCallbackPairs={Array []}
     windowSize={21}

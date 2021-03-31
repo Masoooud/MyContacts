@@ -11,11 +11,11 @@ describe('ContactRow test', () => {
       <ContactRow data={contact} navigation={navigation} />,
     );
 
-    expect(getByTestId('button')).toBeTruthy();
+    expect(getByTestId('contact-row')).toBeTruthy();
     expect(getByTestId('first')).toBeTruthy();
     expect(getByTestId('last')).toBeTruthy();
 
-    expect(getAllByTestId('button')).toHaveLength(1);
+    expect(getAllByTestId('contact-row')).toHaveLength(1);
     expect(getAllByTestId('first')).toHaveLength(1);
     expect(getAllByTestId('last')).toHaveLength(1);
 

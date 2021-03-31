@@ -19,7 +19,12 @@ const MyHeader = ({ title, leftButton, rightButton }) => {
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={styles.container} testID="header-container">
+      <View
+        accessible={true}
+        accessibilityLabel="header"
+        accessibilityHint="Header of the page"
+        style={styles.container}
+        testID="header-container">
         {leftButton ? leftButton : <View />}
         <Text style={[styles.title, Typography.FONT_BOLD]}>{title}</Text>
         {rightButton ? <rightButton /> : <View />}

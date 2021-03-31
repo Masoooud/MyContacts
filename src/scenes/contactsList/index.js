@@ -37,7 +37,7 @@ const ContactsListScreen = ({ navigation }) => {
 
   const ListEmpty = () => (
     <View style={styles.emptyContainer}>
-      <Text style={{ alignSelf: 'center' }}>No contants Available</Text>
+      <Text style={styles.noContact}>No contants Available</Text>
     </View>
   );
 
@@ -60,6 +60,7 @@ const ContactsListScreen = ({ navigation }) => {
         }
         ItemSeparatorComponent={() => <ListSeperator />}
         ListEmptyComponent={() => <ListEmpty />}
+        testID="contacts-list"
       />
     </Layout>
   );
@@ -72,6 +73,9 @@ const styles = StyleSheet.create({
   emptyContainer: {
     marginTop: '20%',
     padding: Spacing.SCALE_16,
+  },
+  noContact: {
+    alignSelf: 'center',
   },
 });
 

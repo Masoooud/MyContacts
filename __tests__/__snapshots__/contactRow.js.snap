@@ -2,6 +2,8 @@
 
 exports[`ContactRow test components rendered properly 1`] = `
 <View
+  accessibilityHint="Navigates to the the contact you pressed"
+  accessibilityLabel="Go to the contact"
   accessible={true}
   focusable={true}
   onClick={[Function]}
@@ -22,7 +24,7 @@ exports[`ContactRow test components rendered properly 1`] = `
       "paddingVertical": 32,
     }
   }
-  testID="button"
+  testID="contact-row"
 >
   <Text
     style={
